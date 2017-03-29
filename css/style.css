@@ -17,7 +17,12 @@ body {
 	margin: 20px;
 	min-width: calc(100vw - 40px);
 	min-height: calc(100vh - 40px);
-	height: calc(100vh - 40px);
+}
+
+body.preview-on {
+	width: 100vw;
+	height: calc(100vh);
+	margin: 0px;
 	overflow: hidden;
 }
 
