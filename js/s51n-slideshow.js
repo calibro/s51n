@@ -20,10 +20,7 @@ function setSlideshow() {
 	console.log('slideshow set');
 }
 
-$( document ).ready(function(){
-	console.log('ready')
-	setTimeout(setSlideshow(), 500);
-});
+setSlideshow();
 
 $( window ).resize(function() {
   setSlideshow();

@@ -18,7 +18,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="preview-off">
+  <body class="">
     
     <section id="cover" class="container-fluid">
       <!-- COVER -->
@@ -162,7 +162,7 @@
       });
     </script>
 
-    <script src="./s51n-slideshow.js"></script>
+    <script src="./js/s51n-slideshow.js"></script>
 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaFIbe3Aub8ooVZGJtr4HdGdntf_zYr90&callback=initMap"></script>
@@ -419,13 +419,24 @@
           }
         ];
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 12,
           center: studio,
-          styles: mapStyle
+          styles: mapStyle,
+          disableDefaultUI: true,
+          panControl: false,
+          zoomControl: false,
+          scrollwheel: false,
+          draggable: true
         });
+        var markerIcon = {
+          url : './images/map-marker.svg',
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(815, 815)
+        }
         var marker = new google.maps.Marker({
           position: studio,
-          map: map
+          map: map,
+          icon: markerIcon
         });
       }
     </script>
