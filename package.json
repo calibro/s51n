@@ -1,0 +1,27 @@
+{
+  "name": "s51n",
+  "version": "0.0.1",
+  "description": "[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calibro/s51n.git"
+  },
+  "keywords": [
+    "yo",
+    "yo",
+    "yo"
+  ],
+  "author": "",
+  "license": "\tCC-BY-NC-ND-4.0",
+  "bugs": {
+    "url": "https://github.com/calibro/s51n/issues"
+  },
+  "homepage": "https://github.com/calibro/s51n#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
