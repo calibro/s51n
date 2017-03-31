@@ -229,7 +229,7 @@ nav#main-nav li a{
 
 .slideshow-container {
     width: calc(100% + 30px);
-    height: 40vh;
+    height: 50vh;
     overflow-y: hidden;
     overflow-x: scroll;
     margin: 10px 0 10px -15px;
@@ -309,9 +309,9 @@ nav#main-nav li a{
 .slideshow .slide.focus {
 	mix-blend-mode: normal;
 }
-/*.slideshow .slide:hover {
+.slideshow .slide:hover {
 	mix-blend-mode: normal;
-}*/
+}
 
 .profile .img-box {
 	background-color: rgba(255, 255, 255, 0);
