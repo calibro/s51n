@@ -31,6 +31,10 @@ function setSlideshow() {
     var slideshowWidth = 0;
 
     slides.each(function(i, slide){
+      $(slide).parent()
+        .width(slide.clientWidth)
+        .height(slide.clientHeight)
+
       var scrollUntill = slideshowWidth - window.innerWidth/2 + slide.clientWidth/2;      
       $(slide).click(function(){
         $(slides).removeClass('focus');
@@ -38,7 +42,11 @@ function setSlideshow() {
         if (scrollUntill > 0 && !is_touch_device()) {
           $(slideshow).parent().animate({
             scrollLeft: scrollUntill
-          }, 800);
+          }, 500);
+        } else if(!is_touch_device()) {
+          $(slideshow).parent().animate({
+            scrollLeft: 0
+          }, 500);
         }
       });
 
@@ -49,7 +57,7 @@ function setSlideshow() {
     $(slideshow).width(slideshowWidth);
 
   });
-
+  $('.slide-box').css('display','inline-block');
   // console.log('slideshow set');
 }
 

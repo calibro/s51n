@@ -245,34 +245,86 @@ nav#main-nav li a{
 	min-width: 100%;
 	font-size: 0; /* to remove white space between images, in order to set it precisely according to some margin */
 }
+.slideshow .slide-box {
+	margin-right: 10px;
+	position: relative;
+	/* set display inline-block with javascript */
+}
+.slideshow .slide-box:last-child {
+	margin-right: 0px;
+}
+@keyframes fading-before {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fading-after {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+.slideshow .slide-box:before,.slideshow .slide-box:after{
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+	content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    pointer-events: none;
+    /*mix-blend-mode: multiply;*/
+}
+.slideshow .slide-box:before {
+    /*animation-name: fading-before;*/
+}
+.slideshow .slide-box:after {
+	top:0;
+    animation-name: fading-after;
+}
+.slideshow .slide-box:hover .slide-box:before,.slideshow .slide-box:after{
+	/*animation-name: none;*/
+}
 
-.slideshow > .slide {
+.slideshow .slide-box.sw01:before {
+	background-image: url(../images/sw02.jpg);
+}
+.slideshow .slide-box.sw01 img {
+	opacity: 0;
+	pointer-events: none;
+}
+.slideshow .slide-box.sw01:after {
+	background-image: url(../images/sw01.jpg);
+}
+
+.slideshow .slide {
 	height: 100%;
 	display: inline-block;
-	margin-right: 10px;
+	margin-right: 0px;
 	mix-blend-mode: multiply;
 	transition-delay: 0.15s;
 	cursor: pointer;
 }
 
-.slideshow > .slide.focus {
+.slideshow .slide.focus {
 	mix-blend-mode: normal;
 }
-
-.slideshow > .slide:hover {
+/*.slideshow .slide:hover {
 	mix-blend-mode: normal;
-}
+}*/
 
-.slideshow > .slide:last-child {
-	margin-right: 0px;
+.profile .img-box {
+	background-color: rgba(255, 255, 255, 0);
+	transition: background-color 0.35s ease-in-out;
+	display: block;
+}
+.profile .img-box:hover {
+	background-color: rgba(255, 255, 255, 1);
 }
 
 .profile img {
 	mix-blend-mode: multiply;
-}
-
-.profile img:hover {
-	mix-blend-mode: normal;
+	pointer-events: none;
 }
 
 @media screen and (max-width: 767px){
@@ -299,5 +351,22 @@ nav#main-nav li a{
 
 	#cover canvas {
 		top: -7.5vh !important;
+	}
+}
+@media (min-width: 768px) {
+	.container {
+	    width: 670px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+	    width: 890px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+	    width: 1090px;
 	}
 }
