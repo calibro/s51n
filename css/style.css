@@ -8,6 +8,51 @@ PAVONE #80BDAA > #96B6AC
 
  */
 
+ @font-face {
+    font-family: 'Sirion';
+    src: url('../fonts/sirion-bold-webfont.woff2') format('woff2'),
+         url('../fonts/sirion-bold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Sirion';
+    src: url('../fonts/sirion-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/sirion-bolditalic-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Sirion';
+    src: url('../fonts/sirion-italic-webfont.woff2') format('woff2'),
+         url('../fonts/sirion-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Sirion';
+    src: url('../fonts/sirion-regular-webfont.woff2') format('woff2'),
+         url('../fonts/sirion-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
 	background-color: #96B6AC;
 }
@@ -20,7 +65,7 @@ body {
 	color: #E0DDD6;
 	font-size: 20px;
 	line-height: 28px;
-	font-family: 'NB International Pro', serif;
+	font-family: 'Sirion', serif;
 }
 
 h2 {
