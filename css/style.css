@@ -133,6 +133,11 @@ nav#main-nav li.instagram{
     width: 100vw;
     background-color: #96b6ac;
     padding: 13px 0;
+
+
+    /* put this element at the bottom of the body, comment to make it fixed at the bottom of the viewport */
+    /*position: absolute;
+    bottom: -40px;*/
 }
 
 nav#main-nav li.instagram h2::before, nav#main-nav li.instagram h2::after{
@@ -208,7 +213,7 @@ nav#main-nav li a{
 }
 
 #cover canvas {
-	top: -7.5vh !important;
+	top: -11vh !important;
 }
 
 #map {
@@ -227,6 +232,8 @@ nav#main-nav li a{
     position: relative;
 }
 
+/* SLIDESHOW */
+
 .slideshow-container {
     width: calc(100% + 30px);
     height: 50vh;
@@ -240,7 +247,6 @@ nav#main-nav li a{
 }
 
 .slideshow {
-	/*position: relative;*/
 	height: 100%;
 	min-width: 100%;
 	font-size: 0; /* to remove white space between images, in order to set it precisely according to some margin */
@@ -248,11 +254,45 @@ nav#main-nav li a{
 .slideshow .slide-box {
 	margin-right: 10px;
 	position: relative;
+	cursor: pointer;
+	overflow: hidden;
 	/* set display inline-block with javascript */
+}
+.slideshow .slide-box:hover::before, .slideshow .slide-box.focus::before {
+	background-color: white;
 }
 .slideshow .slide-box:last-child {
 	margin-right: 0px;
 }
+
+.slideshow .slide-box::before{
+	content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    pointer-events: none;
+    transition: background-color 0.35s;
+    transition-delay: 125ms;
+    transition-timing-function: ease-in-out;
+}
+.slideshow .slide {
+	height: 100%;
+	display: inline-block;
+	margin-right: 0px;
+	transition-delay: 0.15s;
+	cursor: pointer;
+	animation-name: none;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+	pointer-events: none;
+	position: relative;
+	mix-blend-mode: multiply;
+}
+
 @keyframes fading-before {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -261,57 +301,65 @@ nav#main-nav li a{
     from {opacity: 1;}
     to {opacity: 0;}
 }
-.slideshow .slide-box:before,.slideshow .slide-box:after{
-	animation-duration: 3s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-timing-function: ease-in-out;
-	content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    position: absolute;
-    pointer-events: none;
-    /*mix-blend-mode: multiply;*/
-}
-.slideshow .slide-box:before {
-    /*animation-name: fading-before;*/
-}
-.slideshow .slide-box:after {
-	top:0;
-    animation-name: fading-after;
-}
-.slideshow .slide-box:hover .slide-box:before,.slideshow .slide-box:after{
-	/*animation-name: none;*/
-}
 
-.slideshow .slide-box.sw01:before {
+.slideshow .slide-box.sw01::before {
 	background-image: url(../images/sw02.jpg);
+	opacity: 0
 }
-.slideshow .slide-box.sw01 img {
+.slideshow .slide-box.sw01:hover::before {
+	opacity: 1;
+}
+.slideshow .slide-box.sw01:hover .slide {
+	animation-name: fading-after;
+	mix-blend-mode: normal;
+}
+.slideshow .slide-box.sw01.focus::before {
+	opacity: 1;
+}
+.slideshow .slide-box.sw01.focus .slide {
+	animation-name: fading-after;
+	mix-blend-mode: normal;
+}
+
+.slideshow .slide-box.sw03::before {
+	background-image: url(../images/sw04.jpg);
 	opacity: 0;
-	pointer-events: none;
 }
-.slideshow .slide-box.sw01:after {
-	background-image: url(../images/sw01.jpg);
+.slideshow .slide-box.sw03:hover::before {
+	opacity: 1;
 }
-
-.slideshow .slide {
-	height: 100%;
-	display: inline-block;
-	margin-right: 0px;
-	mix-blend-mode: multiply;
-	transition-delay: 0.15s;
-	cursor: pointer;
-}
-
-.slideshow .slide.focus {
+.slideshow .slide-box.sw03:hover .slide {
+	animation-name: fading-after;
 	mix-blend-mode: normal;
 }
-.slideshow .slide:hover {
+.slideshow .slide-box.sw03.focus::before {
+	opacity: 1;
+}
+.slideshow .slide-box.sw03.focus .slide {
+	animation-name: fading-after;
 	mix-blend-mode: normal;
 }
+
+.slideshow .slide-box.sw05::before {
+	background-image: url(../images/sw06.jpg);
+	opacity: 0;
+}
+.slideshow .slide-box.sw05:hover::before {
+	opacity: 1;
+}
+.slideshow .slide-box.sw05:hover .slide {
+	animation-name: fading-after;
+	mix-blend-mode: normal;
+}
+.slideshow .slide-box.sw05.focus::before {
+	opacity: 1;
+}
+.slideshow .slide-box.sw05.focus .slide {
+	animation-name: fading-after;
+	mix-blend-mode: normal;
+}
+
+/* PROFILE*/
 
 .profile .img-box {
 	background-color: rgba(255, 255, 255, 0);

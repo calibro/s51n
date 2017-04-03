@@ -34,10 +34,10 @@ function setSlideshow() {
       $(slide).parent()
         .width(slide.clientWidth)
         .height(slide.clientHeight)
-
-      var scrollUntill = slideshowWidth - window.innerWidth/2 + slide.clientWidth/2;      
-      $(slide).click(function(){
-        $(slides).removeClass('focus');
+      var scrollUntill = slideshowWidth - window.innerWidth/2 + (slide.clientWidth+80)/2;
+      $(slide).parent().off( 'click' );
+      $(slide).parent().click(function(){
+        $('.slide-box').removeClass('focus');
         $(this).addClass('focus');
         if (scrollUntill > 0 && !is_touch_device()) {
           $(slideshow).parent().animate({
@@ -49,7 +49,6 @@ function setSlideshow() {
           }, 500);
         }
       });
-
       slideshowWidth += slide.clientWidth + slidesPadding;
     })
     
