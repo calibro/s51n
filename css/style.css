@@ -40,6 +40,22 @@ PAVONE #80BDAA > #96B6AC
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Sirion';
+    src: url('../fonts/sirion-light-webfont.woff2') format('woff2'),
+         url('../fonts/sirion-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sirion';
+    src: url('../fonts/sirion-lightita-webfont.woff2') format('woff2'),
+         url('../fonts/sirion-lightita-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
 html {
 	background-color: #96B6AC;
 }
@@ -50,8 +66,9 @@ body {
 	min-width: calc(100vw - 80px);
 	min-height: calc(100vh - 80px);
 	color: #E0DDD6;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 28px;
+	font-weight: 300;
 	font-family: 'Sirion', sans-serif;
 }
 
@@ -61,6 +78,7 @@ h2 {
 	color: #3CB181;
 	font-weight: 500;
 	margin-top: 30vh;
+	letter-spacing: 0.4px;
 }
 
 h2::before {
@@ -71,6 +89,10 @@ h2::before {
 h2::after {
 	content: '\00b7';
 	padding: 0 0 0 5px;
+}
+
+h4 {
+	letter-spacing: 0.3px;
 }
 
 nav#main-nav {
@@ -150,10 +172,11 @@ nav#main-nav li h2{
 	margin: 0;
 	letter-spacing: 0px;
 	transition: letter-spacing 0.35s;
+	letter-spacing: 0.4px;
 }
 
 nav#main-nav li:hover h2 {
-	letter-spacing: 0.2px;
+	letter-spacing: 0.6px;
 }
 
 nav#main-nav li h2::before, nav#main-nav li h2::after {
@@ -239,7 +262,7 @@ nav#main-nav li a{
     height: 50vh;
     overflow-y: hidden;
     overflow-x: scroll;
-    margin: 10px 0 10px -15px;
+    margin: 10vh 0 10px -15px;
 }
 
 .slideshow-container::-webkit-scrollbar {
