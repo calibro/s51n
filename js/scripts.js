@@ -57,15 +57,17 @@ function setSlideshow() {
 
   });
   $('.slide-box').css('display','inline-block');
-  // console.log('slideshow set');
 }
 
 function enableRipples() {
+	var myDropRadius = window.innerWidth>window.innerHeight ? window.innerWidth/20 : window.innerHeight/20;
+	var myResolution = is_touch_device() ? 200 : 650;
+	var myPerturbance = is_touch_device() ? 0.005 : 0.01;
   try {
     $('#cover').ripples({
-      resolution: 750,
-      dropRadius: 75, //px
-      perturbance: 0.01,
+      resolution: myResolution,
+      dropRadius: myDropRadius, //px
+      perturbance: myPerturbance,
     });
   }
   catch (e) {

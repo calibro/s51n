@@ -8,7 +8,8 @@
     <title>Studio 51 North</title>
 
     <!-- Bootstrap -->
-    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="./css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,7 +29,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h2>About Us</h2>
+            <h2 class="about">About Us</h2>
             <span class="my-hr"></span>
             <p>
               Studio 51th North is an architecture firm based in London.<br/>The Studio covers all aspects of the design process, undertaking different ranges of projects (from hospitality to residential including commercial and retail). The scale of these projects varies greatly, from master plans to project delivery, from estates to private residences in the UK and abroad.
@@ -79,6 +80,7 @@
         </div>
       </div>
     </section>
+    <div class="container-fluid text-right" style="font-size: 12px;"> SCROLL IMAGES &rarr; </div>
 
     <section id="team" class="container-fluid">
       <div class="container">
@@ -103,7 +105,7 @@
             <span class="img-box"><img class="img-responsive" src="./images/profile_2.png" /></span>
             <h4><sup class="green">Project manager.</sup> Patrick Grenier</h4>
             <p class="bio">
-              After graduating in International Logisitics in 1995, Patrick became a project manager in 1997 for The Marketing Store Worldwide. Passionate about interiors, he joined David Shave Glavey Interior Design in 2001 where he transfered his skills to high end residential projects. In 2003 he established No! Cream Interior Design, with an aim to inject diversity and colours in interiors. Projects have taken him throughout Europe and Dubai.<br/>In 2013 he assumed the role of project and design Manager at Anna Casa Interiors. In 2017 he joined the ranks of Studio 51 North asproject manager. 
+              After graduating in International Logisitics in 1995, Patrick became a project manager in 1997 for The Marketing Store Worldwide. Passionate about interiors, he joined David Shave Glavey Interior Design in 2001 where he transfered his skills to high end residential projects. In 2003 he established No! Cream Interior Design, with an aim to inject diversity and colours in interiors. Projects have taken him throughout Europe and Dubai.<br/>In 2013 he assumed the role of project and design Manager at Anna Casa Interiors. In 2017 he joined the ranks of Studio 51 North as project manager. 
             </p>
           </div>
           <div class="profile col-md-4">
@@ -123,11 +125,11 @@
           <div class="col-md-7">
             <h2>Contacts</h2>
             <span class="my-hr"></span>
-            <h4><sup class="green">Address: </sup>33 Grosvenor Street, London, w1k 4qu</h4>
-            <h4><sup class="green">Phone: </sup>+44 (0)207 3180626</h4>
+            <h4><sup class="green">Address. </sup>33 Grosvenor Street, London, w1k 4qu</h4>
+            <h4><sup class="green">Phone. </sup>+44 (0)207 3180 626</h4>
 <!--             <h4><sup class="green">Mobile: </sup>+44 (0)7584 667 078</h4>  -->
-             <h4><sup class="green">Email: </sup>+44 (0)207 3180 713</h4>
-            <h4><sup class="green">Instagram: </sup>@studio51north</h4>
+             <h4><sup class="green">Email. </sup><a href="mailto:info@studio51north.com">info@studio51north.com</a></h4>
+            <h4><sup class="green">Instagram. </sup>@studio51north</h4>
           </div>
         </div>
       </div>
@@ -155,8 +157,8 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="./js/jquery.ripples-min.js"></script>
     <script src="./js/scripts.js"></script>
 
@@ -488,7 +490,11 @@
           }
         ];
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
+          zoom: 13,
+          zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.SMALL,
+            position: google.maps.ControlPosition.LEFT_BOTTOM
+          },
           center: studio,
           styles: mapStyle,
           disableDefaultUI: true,
