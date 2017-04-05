@@ -37,7 +37,9 @@ function setSlideshow() {
       var scrollUntill = slideshowWidth - window.innerWidth/2 + (slide.clientWidth+80)/2;
       $(slide).parent().off( 'click' );
       $(slide).parent().click(function(){
-        $('.slide-box').removeClass('focus');
+        if(!is_touch_device()) {
+          $('.slide-box').removeClass('focus');
+        }
         $(this).addClass('focus');
         if (scrollUntill > 0 && !is_touch_device()) {
           $(slideshow).parent().animate({
@@ -52,10 +54,13 @@ function setSlideshow() {
       slideshowWidth += slide.clientWidth + slidesPadding;
     })
     
-    slideshowWidth -= 9; // remove the last padding, but leave 1px for breath.
+    slideshowWidth -= 0; // remove the last padding, but leave 1px for breath.
     $(slideshow).width(slideshowWidth);
 
   });
+  if (is_touch_device()) {
+    $('.slide-box').addClass('focus');
+  }
   $('.slide-box').css('display','inline-block');
 }
 

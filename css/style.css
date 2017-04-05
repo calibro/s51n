@@ -262,6 +262,9 @@ nav#main-nav li a{
     width: calc(100% + 30px);
     background-color: #3f4651;
     margin-left: -15px;
+    background-image: url(../images/map4mobile.png);
+    background-size: cover;
+    background-position: center;
 }
 
 #map::after {
@@ -440,6 +443,12 @@ nav#main-nav li a{
 
 	#cover canvas {
 		top: -7.5vh !important;
+	}
+	.slideshow-container {
+	    height: 30vh;
+	}
+	.profile .img-box {
+	    background-color: rgba(255, 255, 255, 0.4);
 	}
 }
 @media (min-width: 768px) {
