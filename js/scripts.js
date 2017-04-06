@@ -37,9 +37,10 @@ function setSlideshow() {
       var scrollUntill = slideshowWidth - window.innerWidth/2 + (slide.clientWidth+80)/2;
       $(slide).parent().off( 'click' );
       $(slide).parent().click(function(){
-        if(!is_touch_device()) {
-          $('.slide-box').removeClass('focus');
-        }
+        // if(!is_touch_device()) {
+        //   $('.slide-box').removeClass('focus');
+        // }
+        $('.slide-box').removeClass('focus');
         $(this).addClass('focus');
         if (scrollUntill > 0 && !is_touch_device()) {
           $(slideshow).parent().animate({
@@ -58,9 +59,9 @@ function setSlideshow() {
     $(slideshow).width(slideshowWidth);
 
   });
-  if (is_touch_device()) {
-    $('.slide-box').addClass('focus');
-  }
+  // if (is_touch_device()) {
+  //   $('.slide-box').addClass('focus');
+  // }
   $('.slide-box').css('display','inline-block');
 }
 
